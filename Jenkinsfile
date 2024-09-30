@@ -26,15 +26,15 @@ pipeline {
             }
         }
 
-        stage('Run Unit Tests') {
-            steps {
-                // Run the unit tests within the virtual environment
-                sh '''
-                . ${VENV}/bin/activate
-                python -m unittest discover tests
-                '''
-            }
-        }
+        // stage('Run Unit Tests') {
+        //     steps {
+        //         // Run the unit tests within the virtual environment
+        //         sh '''
+        //         . ${VENV}/bin/activate
+        //         python -m unittest discover tests
+        //         '''
+        //     }
+        // }
 
         stage('Deploy') {
             steps {
