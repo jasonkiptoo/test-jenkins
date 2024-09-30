@@ -17,8 +17,8 @@ pipeline {
             steps {
                 // Create a virtual environment
                 sh 'python3 -m venv ${VENV}'
-                // Activate the virtual environment using . instead of source
-                sh '. ${VENV}/bin/activate && pip install --upgrade pip && pip install -r requirements.txt'
+                // Activate the virtual environment and use sudo to install packages
+                sh '. ${VENV}/bin/activate && sudo ${VENV}/bin/pip install --upgrade pip && sudo ${VENV}/bin/pip install -r requirements.txt'
             }
         }
 
